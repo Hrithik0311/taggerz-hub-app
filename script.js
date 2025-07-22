@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Polar Ice',
       description: 'A chilling blast of arctic mint that freshens your breath instantly.',
       price: 2.99,
-      image: 'https://placehold.co/300x200/A7D7F4/FFFFFF?text=Polar+Ice',
+      image: 'https://i5.walmartimages.com/asr/05c4842c-d4a3-4a6c-8515-45d272047f9f_1.086c99f984922105112106fa83568a4d.jpeg',
       aiHint: 'ice glacier',
     },
     {
