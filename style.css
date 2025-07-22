@@ -42,14 +42,14 @@ header {
     width: 95%;
     max-width: 1240px;
     z-index: 10;
-    padding: 10px 0;
+    padding: 5px 0; /* Reduced padding */
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 5px 20px; /* Reduced padding */
 }
 
 .logo {
@@ -57,7 +57,7 @@ header .container {
     align-items: center;
     gap: 8px;
     font-family: var(--font-headline);
-    font-size: 1.5rem;
+    font-size: 1.25rem; /* Reduced font size */
     font-weight: bold;
     color: var(--accent);
     text-decoration: none;
