@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ShoppingCart, ArrowLeft } from 'lucide-react';
+import { ShoppingCart, ArrowLeft, Ruler } from 'lucide-react';
 import Icon from '@/components/icon';
 import Link from 'next/link';
 
@@ -41,10 +41,23 @@ export default function FlavorDetailPage({ params }: { params: { id: string } })
             </CardTitle>
             <CardDescription className="text-lg">{flavor.description}</CardDescription>
           </CardHeader>
-          <CardContent className="flex-grow">
+          <CardContent className="flex-grow space-y-6">
             <Badge variant="secondary" className="text-2xl font-bold bg-primary/20 text-primary-foreground">
               ${flavor.price.toFixed(2)}
             </Badge>
+
+            <div className="flex items-center gap-4">
+              <div className="relative w-[76mm] h-[20mm] border border-dashed p-2 rounded-md">
+                 <Image src="https://placehold.co/76x20.png" alt="Actual size of gum piece" fill className="object-contain" data-ai-hint="gum stick" />
+              </div>
+              <div className="text-sm text-muted-foreground flex items-center gap-2">
+                <Ruler className="h-5 w-5" />
+                <div>
+                    <p className='font-bold'>Actual gum size</p>
+                    <p>76mm x 20mm</p>
+                </div>
+              </div>
+            </div>
           </CardContent>
           <CardFooter>
             <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
