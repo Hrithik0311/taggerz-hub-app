@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
         renderFlavorGrid();
     }
-    if (window.location.pathname.endsWith('cart.html')) {
+    if (window.location.pathname.endsWith('/cart')) {
         renderCartPage();
     }
     updateCartBadge();

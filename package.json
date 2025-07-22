@@ -1,11 +1,28 @@
 {
-  "name": "taggerz-hub-static",
-  "version": "1.0.0",
-  "description": "A static HTML, CSS, JS version of the Taggerz Hub app.",
-  "main": "index.html",
+  "name": "taggerz-hub-next",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "echo \"Open index.html in your browser\""
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "next": "14.2.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "lucide-react": "^0.400.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.4",
+    "typescript": "^5",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4"
+  }
 }
