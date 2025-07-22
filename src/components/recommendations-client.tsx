@@ -41,7 +41,7 @@ export function RecommendationsClient() {
   const form = useForm<RecommendationFormValues>({
     resolver: zodResolver(recommendationSchema),
     defaultValues: {
-      pastPurchases: 'I really liked the Galaxy Grape and Cosmic Mint.',
+      pastPurchases: 'I really liked the Polar Ice and Sweet Watermelon.',
       flavorProfiles: ['sweet', 'minty'],
     },
   });
@@ -79,7 +79,7 @@ export function RecommendationsClient() {
                 <FormItem>
                   <FormLabel>Past Purchases or Liked Flavors</FormLabel>
                   <FormControl>
-                    <Textarea placeholder="e.g., Cosmic Mint, Stardust Strawberry" {...field} />
+                    <Textarea placeholder="e.g., Polar Ice, Sweet Watermelon" {...field} />
                   </FormControl>
                   <FormDescription>
                     List some gum flavors you've enjoyed in the past.
