@@ -1,11 +1,24 @@
+'use client';
+
 import Link from 'next/link';
+import { Sparkles, ShoppingCart, User } from 'lucide-react';
+import { useCart } from '@/context/cart-provider';
+import { useEffect, useState } from 'react';
 
 export default function Header() {
+  const { cartCount } = useCart();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+
   return (
     <header>
       <div className="container">
         <Link href="/" className="logo">
-          <i data-lucide="sparkles"></i>
+          <Sparkles />
           <h1>Taggerz Hub</h1>
         </Link>
         <nav>
@@ -14,13 +27,15 @@ export default function Header() {
         </nav>
         <div className="header-actions">
           <Link href="/cart" className="cart-link">
-            <i data-lucide="shopping-cart"></i>
-            <span id="cart-count-badge" className="badge">
-              0
-            </span>
+            <ShoppingCart />
+            {isClient && cartCount > 0 && (
+              <span id="cart-count-badge" className="badge">
+                {cartCount}
+              </span>
+            )}
           </Link>
           <Link href="/login">
-            <i data-lucide="user"></i>
+            <User />
           </Link>
         </div>
       </div>

@@ -49,15 +49,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (cart.length > 0) {
-      localStorage.setItem('taggerzCart', JSON.stringify(cart));
-    } else {
-      // Only remove if it exists, to avoid unnecessary localStorage operations.
-      if (localStorage.getItem('taggerzCart')) {
-        localStorage.removeItem('taggerzCart');
-      }
+    // This effect persists the cart to localStorage whenever it changes.
+    // It avoids writing an empty array on the initial server render.
+    if (cart.length > 0 || localStorage.getItem('taggerzCart')) {
+        localStorage.setItem('taggerzCart', JSON.stringify(cart));
     }
   }, [cart]);
+
 
   const addToCart = (item: Flavor) => {
     setCart((prevCart) => {

@@ -1,13 +1,24 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/layout/header";
-import Script from "next/script";
 import { CartProvider } from "@/context/cart-provider";
+import ClientOnly from "./components/client-only";
 
 export const metadata: Metadata = {
   title: "Taggerz Hub",
   description: "Welcome to Taggerz Hub!",
 };
+
+function FooterYear() {
+  const [year, setYear] = React.useState(new Date().getFullYear());
+
+  React.useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
+  return <span id="year">{year}</span>;
+}
+
 
 export default function RootLayout({
   children,
@@ -27,7 +38,6 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap"
           rel="stylesheet"
         />
-        <Script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/lucide.min.js" />
       </head>
       <body>
         <CartProvider>
@@ -36,14 +46,14 @@ export default function RootLayout({
           <footer>
             <div className="container">
               <p>
-                © <span id="year">{new Date().getFullYear()}</span> Taggerz Hub.
-                All rights reserved.
+                ©{" "}
+                <ClientOnly>
+                  <>{new Date().getFullYear()}</>
+                </ClientOnly>{" "}
+                Taggerz Hub. All rights reserved.
               </p>
             </div>
           </footer>
-          <Script id="lucide-icons" strategy="lazyOnload">
-            {`lucide.createIcons();`}
-          </Script>
         </CartProvider>
       </body>
     </html>
