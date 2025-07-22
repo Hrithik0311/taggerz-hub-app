@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     flavorGrid.innerHTML = '';
     flavors.forEach((flavor) => {
       const card = document.createElement('div');
-      card.className = 'card';
+      card.className = 'card glass';
       card.innerHTML = `
         <img src="${flavor.image}" alt="${flavor.name}" data-ai-hint="${flavor.aiHint}" />
         <div class="card-content">
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <i data-lucide="shopping-bag"></i>
                 <h3>Your cart is empty.</h3>
                 <p>Looks like you haven't added any delicious gum yet!</p>
-                <a href="index.html" class="btn">Shop Flavors</a>
+                <a href="index.html" class="btn" style="max-width: 200px; margin: 20px auto 0;">Shop Flavors</a>
             </div>
         `;
         // We need to re-run this after changing the DOM
@@ -164,6 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     cartContainer.innerHTML = ''; // Clear previous content
     let subtotal = 0;
+    
+    const itemsContainer = document.createElement('div');
     
     cart.forEach(item => {
         const itemElement = document.createElement('div');
@@ -183,8 +185,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="btn-remove" data-id="${item.id}">&times;</button>
             </div>
         `;
-        cartContainer.appendChild(itemElement);
+        itemsContainer.appendChild(itemElement);
     });
+    
+    cartContainer.appendChild(itemsContainer);
 
     const summaryElement = document.createElement('div');
     summaryElement.className = 'cart-summary';

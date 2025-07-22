@@ -1,21 +1,21 @@
 :root {
-    --primary: #BFFF00;
-    --background: #E0FF80;
-    --accent: #8000FF;
-    --foreground: #3d007a;
-    --card-background: #f0ffd1;
+    --primary: #8000FF; /* Deep Purple */
+    --accent: #BFFF00; /* Vibrant Lime Green */
+    --foreground-dark: #1a0033;
+    --foreground-light: #f0f0f0;
     --font-headline: 'Poppins', sans-serif;
     --font-body: 'PT Sans', sans-serif;
 }
 
 body {
     font-family: var(--font-body);
-    background-color: var(--background);
-    color: var(--foreground);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--foreground-light);
     margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-attachment: fixed;
 }
 
 .container {
@@ -25,12 +25,24 @@ body {
     padding: 20px;
 }
 
+/* Glassmorphism base style */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
 header {
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
     position: sticky;
-    top: 0;
+    top: 10px;
+    margin: 10px auto 0;
+    width: 95%;
+    max-width: 1240px;
     z-index: 10;
+    padding: 10px 0;
 }
 
 header .container {
@@ -62,7 +74,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: var(--foreground);
+    color: var(--foreground-light);
     font-weight: bold;
     transition: color 0.2s;
 }
@@ -78,7 +90,7 @@ nav a:hover {
 }
 
 .header-actions a {
-    color: var(--foreground);
+    color: var(--foreground-light);
     position: relative;
 }
 
@@ -86,7 +98,7 @@ nav a:hover {
     position: absolute;
     top: -8px;
     right: -8px;
-    background-color: var(--accent);
+    background-color: var(--primary);
     color: white;
     border-radius: 50%;
     width: 20px;
@@ -105,13 +117,15 @@ main {
 .hero {
     text-align: center;
     margin: 40px 0;
+    padding: 40px 20px;
 }
 
 .headline {
     font-family: var(--font-headline);
     font-size: 3rem;
     font-weight: 700;
-    color: var(--accent);
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .grid {
@@ -121,10 +135,8 @@ main {
 }
 
 .card {
-    background-color: var(--card-background);
-    border-radius: 8px;
+    /* Inherits from .glass but with specific styles */
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -132,13 +144,14 @@ main {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
 }
 
 .card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .card-content {
@@ -151,19 +164,21 @@ main {
 .card-content h3 {
     font-family: var(--font-headline);
     margin: 0 0 8px 0;
+    color: #fff;
 }
 
 .card-content p {
     margin: 0 0 16px 0;
     font-size: 14px;
     flex-grow: 1;
+    color: var(--foreground-light);
 }
 
 .price {
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--primary-darker, #86b300);
-    background-color: var(--primary);
+    color: var(--foreground-dark);
+    background-color: var(--accent);
     padding: 4px 8px;
     border-radius: 4px;
     display: inline-block;
@@ -173,7 +188,7 @@ main {
 .btn {
     display: inline-block;
     width: 100%;
-    background-color: var(--accent);
+    background-color: var(--primary);
     color: white;
     padding: 12px;
     border: none;
@@ -191,11 +206,11 @@ main {
 }
 
 footer {
-    border-top: 1px solid #ddd;
     padding: 20px 0;
     text-align: center;
     font-size: 14px;
     margin-top: 40px;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Cart Page */
@@ -203,8 +218,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 0;
-    border-bottom: 1px solid #ddd;
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .cart-item img {
@@ -229,15 +244,16 @@ footer {
 .cart-item-actions input {
     width: 50px;
     text-align: center;
-    border: 1px solid #ddd;
+    background: rgba(0,0,0,0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 4px;
     padding: 4px;
 }
 
 .cart-summary {
     margin-top: 20px;
-    padding-top: 20px;
-    border-top: 2px solid #ccc;
+    padding: 20px;
     text-align: right;
 }
 
@@ -257,7 +273,7 @@ footer {
 .empty-cart i {
     width: 64px;
     height: 64px;
-    color: #999;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .empty-cart h3 {
@@ -266,21 +282,18 @@ footer {
     margin-top: 16px;
 }
 
-
 /* Login/Register Page */
 .auth-form-container {
     max-width: 400px;
     margin: 40px auto;
     padding: 40px;
-    background-color: var(--card-background);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .auth-form-container h2 {
     font-family: var(--font-headline);
     text-align: center;
     margin-bottom: 24px;
+    color: #fff;
 }
 
 .form-group {
@@ -295,16 +308,30 @@ footer {
 
 .form-group input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 4px;
     box-sizing: border-box;
+    background: rgba(0,0,0,0.2);
+    color: #fff;
+    font-size: 1rem;
 }
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
 
 .auth-form-container p {
     text-align: center;
     margin-top: 16px;
 }
+
+.auth-form-container p a {
+    color: var(--accent);
+    font-weight: bold;
+}
+
 
 /* Orders Page */
 .order-table {
@@ -313,19 +340,22 @@ footer {
     margin-top: 20px;
 }
 .order-table th, .order-table td {
-    border: 1px solid #ddd;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 12px;
     text-align: left;
 }
 .order-table th {
-    background-color: var(--card-background);
     font-family: var(--font-headline);
+    color: #fff;
+}
+.order-table tbody {
+    background: rgba(255, 255, 255, 0.05);
 }
 .status-delivered {
-    color: green;
+    color: #50fa7b; /* Light Green */
     font-weight: bold;
 }
 .status-shipped {
-    color: blue;
+    color: #8be9fd; /* Light Cyan */
     font-weight: bold;
 }
