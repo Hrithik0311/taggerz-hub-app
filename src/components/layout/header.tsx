@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Package, Home, Sparkles, ShoppingCart, User, Bot } from 'lucide-react';
+import { Package, Home, Sparkles, ShoppingCart, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useCart } from '../cart-provider';
@@ -11,7 +11,6 @@ import { Badge } from '../ui/badge';
 const navLinks = [
   { href: '/', label: 'Flavors', icon: Home },
   { href: '/orders', label: 'My Orders', icon: Package },
-  { href: '/recommendations', label: 'AI Picks', icon: Bot },
 ];
 
 export default function Header() {

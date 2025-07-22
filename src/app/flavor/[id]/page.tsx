@@ -7,7 +7,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ShoppingCart, ArrowLeft, Ruler } from 'lucide-react';
-import Icon from '@/components/icon';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { useCart } from '@/components/cart-provider';
@@ -51,7 +50,7 @@ export default function FlavorDetailPage({ params }: { params: { id: string } })
             <div className="flex flex-col">
               <CardHeader>
                 <CardTitle className="font-headline text-4xl flex items-center gap-3">
-                    <Icon name={flavor.iconName} className="h-10 w-10 text-accent" />
+                    
                     <span>{flavor.name}</span>
                 </CardTitle>
                 <CardDescription className="text-lg">{flavor.description}</CardDescription>

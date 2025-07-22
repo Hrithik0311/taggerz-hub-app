@@ -12,7 +12,6 @@ import {
 } from '@/components/ui/card';
 import { ShoppingCart } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import Icon from './icon';
 import Link from 'next/link';
 import { Button } from './ui/button';
 import { useCart } from './cart-provider';
@@ -50,7 +49,7 @@ export default function FlavorCard({ flavor }: FlavorCardProps) {
         </div>
         <CardHeader className="flex-grow">
           <CardTitle className="font-headline flex items-center gap-2">
-            <Icon name={flavor.iconName} className="h-6 w-6 text-accent" />
+            
             <span>{flavor.name}</span>
           </CardTitle>
           <CardDescription>{flavor.description}</CardDescription>
