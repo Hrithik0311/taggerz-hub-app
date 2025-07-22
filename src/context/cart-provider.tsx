@@ -37,9 +37,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([]);
 
   useEffect(() => {
-    const storedCart = localStorage.getItem('taggerzCart');
-    if (storedCart) {
-      setCart(JSON.parse(storedCart));
+    // This code runs only on the client, after the component has mounted.
+    try {
+      const storedCart = localStorage.getItem('taggerzCart');
+      if (storedCart) {
+        setCart(JSON.parse(storedCart));
+      }
+    } catch (error) {
+      console.error("Failed to parse cart from localStorage", error);
     }
   }, []);
 
@@ -47,7 +52,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
     if (cart.length > 0) {
       localStorage.setItem('taggerzCart', JSON.stringify(cart));
     } else {
-      localStorage.removeItem('taggerzCart');
+      // Only remove if it exists, to avoid unnecessary localStorage operations.
+      if (localStorage.getItem('taggerzCart')) {
+        localStorage.removeItem('taggerzCart');
+      }
     }
   }, [cart]);
 
