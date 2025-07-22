@@ -22,18 +22,18 @@ interface FlavorCardProps {
 
 export default function FlavorCard({ flavor }: FlavorCardProps) {
   return (
-    <Link href={`/flavor/${flavor.id}`} className="group">
+    <Link href={`/flavor/${flavor.id}`} className="group h-full">
       <Card className="flex flex-col overflow-hidden transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1 h-full">
+        <div className="relative h-48 w-full">
+            <Image
+              src={flavor.image}
+              alt={flavor.name}
+              fill
+              className="object-cover"
+              data-ai-hint={flavor.aiHint}
+            />
+        </div>
         <CardHeader className="flex-grow">
-          <div className="relative h-48 w-full mb-4">
-              <Image
-                src={flavor.image}
-                alt={flavor.name}
-                fill
-                className="object-cover rounded-t-lg"
-                data-ai-hint={flavor.aiHint}
-              />
-          </div>
           <CardTitle className="font-headline flex items-center gap-2">
               <Icon name={flavor.iconName} className="h-6 w-6 text-accent" />
               <span>{flavor.name}</span>
@@ -46,10 +46,8 @@ export default function FlavorCard({ flavor }: FlavorCardProps) {
           </Badge>
         </CardContent>
         <CardFooter>
-           <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90" asChild>
-             <div>
+           <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                 <ShoppingCart className="mr-2 h-4 w-4" /> View Details
-             </div>
            </Button>
         </CardFooter>
       </Card>
