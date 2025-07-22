@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
   const flavors = [
     {
@@ -5,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Polar Ice',
       description: 'A chilling blast of arctic mint that freshens your breath instantly.',
       price: 2.99,
-      image: 'https://placehold.co/300x200/667eea/f0f0f0.png',
+      image: 'https://source.unsplash.com/300x200/?ice,glacier',
       aiHint: 'ice glacier',
     },
     {
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Classic Bubble',
       description: 'The timeless taste of sweet, pink bubblegum. Perfect for blowing huge bubbles.',
       price: 2.99,
-      image: 'https://placehold.co/300x200/ff69b4/f0f0f0.png',
+      image: 'https://source.unsplash.com/300x200/?pink,bubblegum',
       aiHint: 'pink balloon',
     },
     {
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Berry Burst',
       description: 'A juicy explosion of strawberry, raspberry, and blueberry.',
       price: 3.49,
-      image: 'https://placehold.co/300x200/764ba2/f0f0f0.png',
+      image: 'https://source.unsplash.com/300x200/?berries',
       aiHint: 'berry fruit',
     },
     {
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Winterfresh',
       description: 'A crisp, cool wave of refreshing wintergreen for a clean feeling.',
       price: 3.49,
-      image: 'https://placehold.co/300x200/8be9fd/1a0033.png',
+      image: 'https://source.unsplash.com/300x200/?winter,mint',
       aiHint: 'winter mountain',
     },
     {
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Cinnamon Surge',
       description: 'A bold and spicy surge of warm cinnamon flavor.',
       price: 3.99,
-      image: 'https://placehold.co/300x200/c94b4b/f0f0f0.png',
+      image: 'https://source.unsplash.com/300x200/?cinnamon',
       aiHint: 'cinnamon spice',
     },
     {
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Tropical Tango',
       description: 'A vibrant dance of mango, pineapple, and passionfruit.',
       price: 3.99,
-      image: 'https://placehold.co/300x200/f2c94c/1a0033.png',
+      image: 'https://source.unsplash.com/300x200/?tropical,fruit',
       aiHint: 'tropical beach',
     },
   ];
