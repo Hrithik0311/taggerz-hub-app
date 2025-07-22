@@ -10,9 +10,11 @@ import { ShoppingCart, ArrowLeft, Ruler } from 'lucide-react';
 import Icon from '@/components/icon';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
+import { useCart } from '@/components/cart-provider';
 
 export default function FlavorDetailPage({ params }: { params: { id: string } }) {
   const { toast } = useToast();
+  const { addToCart } = useCart();
   const flavor = gumFlavors.find((f) => f.id === params.id);
 
   if (!flavor) {
@@ -20,6 +22,7 @@ export default function FlavorDetailPage({ params }: { params: { id: string } })
   }
 
   const handleAddToCart = () => {
+    addToCart(flavor);
     toast({
         title: "Added to cart!",
         description: `${flavor.name} has been added to your cart.`,
