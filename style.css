@@ -94,6 +94,12 @@ nav a:hover {
     position: relative;
 }
 
+/* Ensure Lucide icons in the header are always visible */
+.header-actions a svg {
+    stroke: var(--foreground-light);
+}
+
+
 .badge {
     position: absolute;
     top: -8px;
