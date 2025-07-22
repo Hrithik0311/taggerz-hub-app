@@ -1,3 +1,5 @@
+'use client';
+
 import { gumFlavors } from '@/lib/mock-data';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -7,12 +9,21 @@ import { Button } from '@/components/ui/button';
 import { ShoppingCart, ArrowLeft, Ruler } from 'lucide-react';
 import Icon from '@/components/icon';
 import Link from 'next/link';
+import { useToast } from '@/hooks/use-toast';
 
 export default function FlavorDetailPage({ params }: { params: { id: string } }) {
+  const { toast } = useToast();
   const flavor = gumFlavors.find((f) => f.id === params.id);
 
   if (!flavor) {
     notFound();
+  }
+
+  const handleAddToCart = () => {
+    toast({
+        title: "Added to cart!",
+        description: `${flavor.name} has been added to your cart.`,
+    });
   }
 
   return (
@@ -61,7 +72,7 @@ export default function FlavorDetailPage({ params }: { params: { id: string } })
                 </div>
               </CardContent>
               <CardFooter>
-                <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90" onClick={handleAddToCart}>
                   <ShoppingCart className="mr-2 h-5 w-5" /> Add to Cart
                 </Button>
               </CardFooter>
