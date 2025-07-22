@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Polar Ice',
       description: 'A chilling blast of arctic mint that freshens your breath instantly.',
       price: 2.99,
-      image: 'https://source.unsplash.com/300x200/?ice,glacier',
+      image: 'https://placehold.co/300x200/A7D7F4/FFFFFF?text=Polar+Ice',
       aiHint: 'ice glacier',
     },
     {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Classic Bubble',
       description: 'The timeless taste of sweet, pink bubblegum. Perfect for blowing huge bubbles.',
       price: 2.99,
-      image: 'https://source.unsplash.com/300x200/?pink,bubblegum',
+      image: 'https://placehold.co/300x200/FFC0CB/FFFFFF?text=Classic+Bubble',
       aiHint: 'pink balloon',
     },
     {
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Berry Burst',
       description: 'A juicy explosion of strawberry, raspberry, and blueberry.',
       price: 3.49,
-      image: 'https://source.unsplash.com/300x200/?berries',
+      image: 'https://placehold.co/300x200/D0005E/FFFFFF?text=Berry+Burst',
       aiHint: 'berry fruit',
     },
     {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Winterfresh',
       description: 'A crisp, cool wave of refreshing wintergreen for a clean feeling.',
       price: 3.49,
-      image: 'https://source.unsplash.com/300x200/?winter,mint',
+      image: 'https://placehold.co/300x200/7FFFD4/000000?text=Winterfresh',
       aiHint: 'winter mountain',
     },
     {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Cinnamon Surge',
       description: 'A bold and spicy surge of warm cinnamon flavor.',
       price: 3.99,
-      image: 'https://source.unsplash.com/300x200/?cinnamon',
+      image: 'https://placehold.co/300x200/C46210/FFFFFF?text=Cinnamon',
       aiHint: 'cinnamon spice',
     },
     {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Tropical Tango',
       description: 'A vibrant dance of mango, pineapple, and passionfruit.',
       price: 3.99,
-      image: 'https://source.unsplash.com/300x200/?tropical,fruit',
+      image: 'https://placehold.co/300x200/FFD700/000000?text=Tropical',
       aiHint: 'tropical beach',
     },
   ];
