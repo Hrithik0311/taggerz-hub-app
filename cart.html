@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Taggerz Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/lucide.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">
+                <i data-lucide="sparkles"></i>
+                <h1>Taggerz Hub</h1>
+            </a>
+            <nav>
+                <a href="/">Flavors</a>
+                <a href="/orders.html">My Orders</a>
+            </nav>
+            <div class="header-actions">
+                <a href="/cart.html" class="cart-link">
+                    <i data-lucide="shopping-cart"></i>
+                    <span id="cart-count-badge" class="badge">0</span>
+                </a>
+                <a href="/login.html">
+                    <i data-lucide="user"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="headline" style="font-size: 2rem; text-align: center; margin-bottom: 24px;">Your Cart</h2>
+        <div id="cart-container">
+            <!-- Cart items will be injected here by JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="year"></span> Taggerz Hub. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        lucide.createIcons();
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
