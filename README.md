@@ -1,4 +1,4 @@
-# Taggerz Hub
+# Taggerz
 
 This is a static e-commerce website for the Taggerz gum business, built with HTML, CSS, and vanilla JavaScript. It is designed to be hosted on static hosting platforms like GitHub Pages.
 
