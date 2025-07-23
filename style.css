@@ -102,12 +102,13 @@ nav a:hover {
     position: relative;
 }
 
-.header-actions a i, .header-actions a svg {
-    stroke: var(--foreground-dark);
+/* Force header icons to be visible */
+.header-actions i, .header-actions svg {
+    stroke: var(--foreground-dark) !important;
     transition: stroke 0.2s;
 }
 .header-actions a:hover i, .header-actions a:hover svg {
-    stroke: var(--primary);
+    stroke: var(--primary) !important;
 }
 
 .badge {
