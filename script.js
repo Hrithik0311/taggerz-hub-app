@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
   const flavors = [
     {
@@ -58,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('login-form');
   const registerForm = document.getElementById('register-form');
 
-
   // Set current year in footer
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
@@ -84,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const addToCart = (flavorId) => {
+  const addToCart = (flavorId, buttonElement) => {
     const flavor = flavors.find(f => f.id === flavorId);
     if (!flavor) return;
 
@@ -95,7 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
       cart.push({ ...flavor, quantity: 1 });
     }
     saveCart();
-    alert(`${flavor.name} added to cart!`);
+    
+    // Give user feedback without an alert
+    buttonElement.textContent = 'Added!';
+    buttonElement.classList.add('added');
+    setTimeout(() => {
+        buttonElement.textContent = 'Add to Cart';
+        buttonElement.classList.remove('added');
+    }, 1500);
   };
   
   const updateQuantity = (flavorId, newQuantity) => {
@@ -104,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (newQuantity > 0) {
             item.quantity = newQuantity;
         } else {
+            // If quantity is 0 or less, remove it
             cart = cart.filter(i => i.id !== flavorId);
         }
     }
@@ -131,18 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3>${flavor.name}</h3>
           <p>${flavor.description}</p>
           <div class="price">$${flavor.price.toFixed(2)}</div>
-          <button class="btn" data-flavor-id="${flavor.id}">Add to Cart</button>
+          <button class="btn add-to-cart-btn" data-flavor-id="${flavor.id}">Add to Cart</button>
         </div>
       `;
       flavorGrid.appendChild(card);
-    });
-
-    // Add event listeners to buttons after they are created
-    document.querySelectorAll('.btn[data-flavor-id]').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const flavorId = parseInt(e.target.dataset.flavorId, 10);
-            addToCart(flavorId);
-        });
     });
   };
   
@@ -158,8 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="index.html" class="btn" style="max-width: 200px; margin: 20px auto 0;">Shop Flavors</a>
             </div>
         `;
-        // We need to re-run this after changing the DOM
-        lucide.createIcons();
+        lucide.createIcons(); // Re-render icons for the empty cart message
         return;
     }
     
@@ -167,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let subtotal = 0;
     
     const itemsContainer = document.createElement('div');
+    itemsContainer.className = 'cart-items-list';
     
     cart.forEach(item => {
         const itemElement = document.createElement('div');
@@ -178,12 +176,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="${item.image}" alt="${item.name}">
                 <div>
                     <h3>${item.name}</h3>
-                    <p>$${item.price.toFixed(2)}</p>
+                    <p class="price-small">$${item.price.toFixed(2)}</p>
                 </div>
             </div>
             <div class="cart-item-actions">
                 <input type="number" value="${item.quantity}" min="1" data-id="${item.id}" class="quantity-input">
-                <button class="btn-remove" data-id="${item.id}">&times;</button>
+                <button class="btn-remove" data-id="${item.id}">
+                  <i data-lucide="trash-2"></i>
+                </button>
             </div>
         `;
         itemsContainer.appendChild(itemElement);
@@ -195,35 +195,39 @@ document.addEventListener('DOMContentLoaded', () => {
     summaryElement.className = 'cart-summary';
     summaryElement.innerHTML = `
         <h3>Order Summary</h3>
-        <p>Subtotal: <strong>$${subtotal.toFixed(2)}</strong></p>
-        <p>Shipping: <strong>FREE</strong></p>
-        <h3>Total: <strong>$${subtotal.toFixed(2)}</strong></h3>
-        <button class="btn" onclick="alert('Checkout is not implemented in this demo.')">Proceed to Checkout</button>
+        <div class="summary-row"><span>Subtotal</span><strong>$${subtotal.toFixed(2)}</strong></div>
+        <div class="summary-row"><span>Shipping</span><strong>FREE</strong></div>
+        <div class="summary-total"><span>Total</span><strong>$${subtotal.toFixed(2)}</strong></div>
+        <button class="btn checkout-btn" onclick="alert('Checkout is not implemented in this demo.')">Proceed to Checkout</button>
     `;
     cartContainer.appendChild(summaryElement);
 
-    // Add event listeners for quantity changes and removal
-    document.querySelectorAll('.quantity-input').forEach(input => {
-        input.addEventListener('change', e => {
-            const id = parseInt(e.target.dataset.id);
-            const quantity = parseInt(e.target.value);
+    // Add event listeners using event delegation on the container
+    cartContainer.addEventListener('change', e => {
+        if (e.target.classList.contains('quantity-input')) {
+            const id = parseInt(e.target.dataset.id, 10);
+            const quantity = parseInt(e.target.value, 10);
             updateQuantity(id, quantity);
-        });
+        }
     });
     
-    document.querySelectorAll('.btn-remove').forEach(button => {
-        button.addEventListener('click', e => {
-            const id = parseInt(e.target.dataset.id);
+    cartContainer.addEventListener('click', e => {
+        const removeButton = e.target.closest('.btn-remove');
+        if (removeButton) {
+            const id = parseInt(removeButton.dataset.id, 10);
             removeFromCart(id);
-        });
+        }
     });
+
+    lucide.createIcons(); // Render trash icons
   };
 
   // --- Auth Forms ---
   if (loginForm) {
       loginForm.addEventListener('submit', (e) => {
           e.preventDefault();
-          alert('Logged in successfully!');
+          // In a real app, you'd validate credentials here
+          alert('Logged in successfully! (Demo)');
           window.location.href = 'index.html';
       });
   }
@@ -231,13 +235,25 @@ document.addEventListener('DOMContentLoaded', () => {
   if (registerForm) {
       registerForm.addEventListener('submit', (e) => {
           e.preventDefault();
-          alert('Account created!');
+          // In a real app, you'd create the user here
+          alert('Account created! Welcome. (Demo)');
           window.location.href = 'index.html';
       });
   }
 
+  // --- Event Delegation for "Add to Cart" ---
+  if (flavorGrid) {
+    flavorGrid.addEventListener('click', e => {
+      const button = e.target.closest('.add-to-cart-btn');
+      if (button) {
+        const flavorId = parseInt(button.dataset.flavorId, 10);
+        addToCart(flavorId, button);
+      }
+    });
+  }
 
-  // Initial Page Load
+
+  // --- Initial Page Load ---
   updateCartBadge();
   if (flavorGrid) {
     renderFlavorGrid();
