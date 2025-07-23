@@ -95,8 +95,9 @@ nav a:hover {
 }
 
 /* Ensure Lucide icons in the header are always visible */
-.header-actions a svg {
+.header-actions a i {
     stroke: var(--foreground-dark);
+    color: var(--foreground-dark);
 }
 
 
@@ -347,6 +348,7 @@ footer {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    color: var(--foreground-dark); /* Ensure text is visible */
 }
 .order-table th, .order-table td {
     border: 1px solid rgba(0, 0, 0, 0.15);
@@ -358,7 +360,7 @@ footer {
     color: var(--primary);
 }
 .order-table tbody {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.3); /* Slightly more opaque for readability */
 }
 .status-delivered {
     color: #0b8457; /* Darker Green */
