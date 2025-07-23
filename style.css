@@ -102,11 +102,11 @@ nav a:hover {
     position: relative;
 }
 
-.header-actions a i {
+.header-actions a i, .header-actions a svg {
     stroke: var(--foreground-dark);
     transition: stroke 0.2s;
 }
-.header-actions a:hover i {
+.header-actions a:hover i, .header-actions a:hover svg {
     stroke: var(--primary);
 }
 
@@ -310,13 +310,13 @@ footer {
     padding: 4px;
     line-height: 0;
 }
-.btn-remove i {
+.btn-remove i, .btn-remove svg {
     width: 20px;
     height: 20px;
     stroke: var(--foreground-light);
     transition: stroke 0.2s;
 }
-.btn-remove:hover i {
+.btn-remove:hover i, .btn-remove:hover svg {
     stroke: #e53e3e; /* red */
 }
 
