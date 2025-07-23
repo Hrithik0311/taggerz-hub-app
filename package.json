@@ -4,8 +4,8 @@
   "description": "A static e-commerce website for the Taggerz gum business.",
   "main": "index.html",
   "scripts": {
-    "dev": "http-server -c-1",
-    "start": "http-server -c-1"
+    "dev": "http-server -c-1 .",
+    "start": "http-server -c-1 ."
   },
   "dependencies": {
     "http-server": "^14.1.1"
