@@ -4,6 +4,7 @@
   "description": "A static e-commerce website for the Taggerz gum business.",
   "main": "index.html",
   "scripts": {
+    "dev": "http-server -c-1",
     "start": "http-server -c-1"
   },
   "dependencies": {
