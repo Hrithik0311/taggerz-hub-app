@@ -12,3 +12,7 @@ This is a static e-commerce website for the Taggerz gum business, built with HTM
 ## How to Run
 
 Simply open the `index.html` file in your web browser.
+
+
+
+or open this https://hrithik0311.github.io/taggerz-hub-app/index.html
