@@ -249,7 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
     
-    let selectedOption = flavor.options[flavor.options.length-1]; // Default to largest pack
+    // Default to the largest pack, which is the last in the options array
+    let selectedOption = flavor.options[flavor.options.length - 1];
 
     const updateDisplay = () => {
         const priceDisplay = document.getElementById('price-display');
@@ -269,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="variant-selector">
                 <h4>Select Size:</h4>
                 <div class="variant-options">
-                    ${flavor.options.map((opt, index) => `
+                    ${flavor.options.map((opt) => `
                         <button class="btn-variant ${opt.sticks === selectedOption.sticks ? 'selected' : ''}" data-sticks="${opt.sticks}" data-price="${opt.price}">
                             ${opt.sticks} stick${opt.sticks > 1 ? 's' : ''}
                         </button>
@@ -285,21 +286,29 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     lucide.createIcons();
     
-    // Add event listeners
+    // Add event listeners AFTER innerHTML is set
     const addToCartButton = document.getElementById('add-to-cart-btn');
-    addToCartButton.addEventListener('click', () => {
-        addToCart(flavor.id, selectedOption.sticks, selectedOption.price, addToCartButton);
-    });
+    if (addToCartButton) {
+        addToCartButton.addEventListener('click', () => {
+            addToCart(flavor.id, selectedOption.sticks, selectedOption.price, addToCartButton);
+        });
+    }
     
     const variantButtons = productDetailContainer.querySelectorAll('.btn-variant');
     variantButtons.forEach(button => {
         button.addEventListener('click', () => {
+            // Visually deselect all buttons
             variantButtons.forEach(btn => btn.classList.remove('selected'));
+            // Visually select the clicked button
             button.classList.add('selected');
+            
+            // Update the selected option state
             selectedOption = {
-                sticks: parseInt(button.dataset.sticks),
+                sticks: parseInt(button.dataset.sticks, 10),
                 price: parseFloat(button.dataset.price)
             };
+            
+            // Update the price display
             updateDisplay();
         });
     });
