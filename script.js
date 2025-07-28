@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 1,
       name: 'Trident Pineapple Twist',
-      description: 'A sweet and tangy burst of tropical pineapple flavor.',
+      description: 'A sweet and tangy burst of tropical pineapple flavor. Each pack contains 14 pieces of sugar-free gum.',
       price: 1.25,
       image: 'https://storage.googleapis.com/stedi-studio-prod/1721861059929-trident-pineapple.jpg',
       aiHint: 'pineapple gum',
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 2,
       name: 'Trident Bubblegum',
-      description: 'The classic, sweet taste of bubblegum for a fun, fresh chew.',
+      description: 'The classic, sweet taste of bubblegum for a fun, fresh chew. Each pack contains 14 pieces of sugar-free gum.',
       price: 1.25,
       image: 'https://i5.walmartimages.com/seo/Trident-Bubble-Gum-Sugar-Free-Gum-12-Packs-168-Pieces_a0186d9a-5e04-4533-87f5-23c510a76046.85f401f703e39064c581a63b063116d4.jpeg',
       aiHint: 'pink bubblegum',
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 3,
       name: 'Trident Perfect Peppermint',
-      description: 'A cool, crisp peppermint flavor for an invigoratingly fresh breath.',
+      description: 'A cool, crisp peppermint flavor for an invigoratingly fresh breath. Each pack contains 14 pieces of sugar-free gum.',
       price: 1.25,
       image: 'https://storage.googleapis.com/stedi-studio-prod/1721861294073-trident-peppermint.jpg',
       aiHint: 'peppermint leaf',
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 4,
       name: 'Trident Cinnamon',
-      description: 'A bold, fiery burst of sweet and spicy cinnamon flavor.',
+      description: 'A bold, fiery burst of sweet and spicy cinnamon flavor. Each pack contains 14 pieces of sugar-free gum.',
       price: 1.25,
       image: 'https://i5.walmartimages.com/seo/Trident-Cinnamon-Sugar-Free-Gum-with-Xylitol-14-Count_6dc69851-f4ab-45c1-8422-b5311b9fa75c.9bd9422a134370d9a263162381283832.jpeg',
       aiHint: 'cinnamon stick',
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 5,
       name: 'Trident Watermelon Twist',
-      description: 'The juicy, refreshing flavor of a sweet slice of watermelon.',
+      description: 'The juicy, refreshing flavor of a sweet slice of watermelon. Each pack contains 14 pieces of sugar-free gum.',
       price: 1.25,
       image: 'https://i5.walmartimages.com/seo/Trident-Vibes-Watermelon-Twist-Sugar-Free-Gum-1-Bottle-40-Piece-Pack_3c279d03-34e8-469a-906b-4e12e75e54d8.530396489437151f1659f49377484d4b.jpeg',
       aiHint: 'watermelon fruit',
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 6,
       name: 'Trident Spearmint',
-      description: 'The classic, refreshing taste of spearmint that cools you down.',
+      description: 'The classic, refreshing taste of spearmint that cools you down. Each pack contains 14 pieces of sugar-free gum.',
       price: 1.25,
       image: 'https://i5.walmartimages.com/seo/Trident-Spearmint-Sugar-Free-Gum-12-Packs-168-Pieces_8f7b0b8f-5953-41a6-8e2b-f414578c4a17.e9151c89b78335552697d413364f9958.jpeg',
       aiHint: 'green spearmint',
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 7,
       name: 'Trident Mint Bliss',
-      description: 'A smooth, satisfying mint flavor for a blissful, fresh feeling.',
+      description: 'A smooth, satisfying mint flavor for a blissful, fresh feeling. Each pack contains 14 pieces of sugar-free gum.',
       price: 1.25,
       image: 'https://storage.googleapis.com/stedi-studio-prod/1721861304538-trident-mint-bliss.jpg',
       aiHint: 'mint spearmint',
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 8,
       name: 'Trident Tropical Twist',
-      description: 'A sweet splash of mango and pineapple flavor for a tropical getaway.',
+      description: 'A sweet splash of mango and pineapple flavor for a tropical getaway. Each pack contains 14 pieces of sugar-free gum.',
       price: 1.25,
       image: 'https://i5.walmartimages.com/seo/Trident-Tropical-Twist-Sugar-Free-Gum-with-Xylitol-12-Packs-of-14-Pieces-168-Total-Pieces_b432e188-1596-4e45-b659-333d404d8051.10269f88ae236168e34a66a7751adca3.jpeg',
       aiHint: 'tropical fruit',
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 9,
       name: 'Trident Original Flavor',
-      description: 'The timeless, original flavor that started it all.',
+      description: 'The timeless, original flavor that started it all. Each pack contains 14 pieces of sugar-free gum.',
       price: 1.25,
       image: 'https://storage.googleapis.com/stedi-studio-prod/1721861313935-trident-original.jpg',
       aiHint: 'blue chewing',
@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearSpan = document.getElementById('year');
   const loginForm = document.getElementById('login-form');
   const registerForm = document.getElementById('register-form');
+  const productDetailContainer = document.getElementById('product-detail');
 
   // Set current year in footer
   if (yearSpan) {
@@ -119,12 +120,14 @@ document.addEventListener('DOMContentLoaded', () => {
     saveCart();
     
     // Give user feedback without an alert
-    buttonElement.textContent = 'Added!';
-    buttonElement.classList.add('added');
-    setTimeout(() => {
-        buttonElement.textContent = 'Add to Cart';
-        buttonElement.classList.remove('added');
-    }, 1500);
+    if (buttonElement) {
+        buttonElement.textContent = 'Added!';
+        buttonElement.classList.add('added');
+        setTimeout(() => {
+            buttonElement.textContent = 'Add to Cart';
+            buttonElement.classList.remove('added');
+        }, 1500);
+    }
   };
   
   const updateQuantity = (flavorId, newQuantity) => {
@@ -153,21 +156,61 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!flavorGrid) return;
     flavorGrid.innerHTML = '';
     flavors.forEach((flavor) => {
-      const card = document.createElement('div');
-      card.className = 'card glass';
-      card.innerHTML = `
-        <img src="${flavor.image}" alt="${flavor.name}" data-ai-hint="${flavor.aiHint}" />
-        <div class="card-content">
-          <h3>${flavor.name}</h3>
-          <p>${flavor.description}</p>
-          <div class="price">$${flavor.price.toFixed(2)}</div>
-          <button class="btn add-to-cart-btn" data-flavor-id="${flavor.id}">Add to Cart</button>
+      const cardLink = document.createElement('a');
+      cardLink.href = `product.html?id=${flavor.id}`;
+      cardLink.className = 'card-link';
+      cardLink.innerHTML = `
+        <div class="card glass">
+          <img src="${flavor.image}" alt="${flavor.name}" data-ai-hint="${flavor.aiHint}" />
+          <div class="card-content">
+            <h3>${flavor.name}</h3>
+            <p>${flavor.description.substring(0, 70)}...</p>
+            <div class="price-view">
+                <span class="price-tag">$${flavor.price.toFixed(2)}</span>
+                <span class="view-details">View Details <i data-lucide="arrow-right"></i></span>
+            </div>
+          </div>
         </div>
       `;
-      flavorGrid.appendChild(card);
+      flavorGrid.appendChild(cardLink);
     });
+    lucide.createIcons();
   };
   
+  const renderProductDetail = () => {
+    if (!productDetailContainer) return;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = parseInt(urlParams.get('id'), 10);
+    const flavor = flavors.find(f => f.id === productId);
+
+    if (!flavor) {
+        productDetailContainer.innerHTML = '<p>Product not found.</p>';
+        return;
+    }
+
+    productDetailContainer.innerHTML = `
+        <div class="product-image">
+            <img src="${flavor.image}" alt="${flavor.name}" class="glass">
+        </div>
+        <div class="product-info">
+            <h2 class="headline">${flavor.name}</h2>
+            <p class="product-description">${flavor.description}</p>
+            <div class="price-large">$${flavor.price.toFixed(2)}</div>
+            <button class="btn add-to-cart-btn" data-flavor-id="${flavor.id}">
+                <i data-lucide="shopping-cart"></i> Add to Cart
+            </button>
+        </div>
+    `;
+    lucide.createIcons();
+    
+    // Add event listener for the new button
+    const addToCartButton = productDetailContainer.querySelector('.add-to-cart-btn');
+    addToCartButton.addEventListener('click', () => {
+        addToCart(flavor.id, addToCartButton);
+    });
+  };
+
   const renderCart = () => {
     if(!cartContainer) return;
     
@@ -265,18 +308,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
-  // --- Event Delegation for "Add to Cart" ---
-  if (flavorGrid) {
-    flavorGrid.addEventListener('click', e => {
-      const button = e.target.closest('.add-to-cart-btn');
-      if (button) {
-        const flavorId = parseInt(button.dataset.flavorId, 10);
-        addToCart(flavorId, button);
-      }
-    });
-  }
-
-
   // --- Initial Page Load ---
   updateCartBadge();
   if (flavorGrid) {
@@ -284,5 +315,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (cartContainer) {
     renderCart();
+  }
+  if (productDetailContainer) {
+    renderProductDetail();
   }
 });

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details - Taggerz</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="glass">
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="https://storage.googleapis.com/stedi-studio-prod/1721855990299-taggerz-logo.png" alt="Taggerz Logo" class="logo-img">
+          <h1>Taggerz</h1>
+        </a>
+        <nav>
+          <a href="index.html">Flavors</a>
+          <a href="orders.html">My Orders</a>
+        </nav>
+        <div class="header-actions">
+          <a href="cart.html" class="cart-link">
+            <i data-lucide="shopping-cart"></i>
+            <span id="cart-count-badge" class="badge" style="display: none">0</span>
+          </a>
+          <a href="login.html">
+            <i data-lucide="user"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div id="product-detail">
+        <!-- Product details will be injected here by JavaScript -->
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© <span id="year"></span> Taggerz. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/lucide.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
