@@ -3,74 +3,119 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 1,
       name: 'Trident Pineapple Twist',
-      description: 'A sweet and tangy burst of tropical pineapple flavor. Each pack contains 14 pieces of sugar-free gum.',
-      price: 1.25,
       image: 'https://storage.googleapis.com/stedi-studio-prod/1721861059929-trident-pineapple.jpg',
       aiHint: 'pineapple gum',
+      description: 'A sweet and tangy burst of tropical pineapple flavor.',
+      options: [
+        { sticks: 1, price: 0.20 },
+        { sticks: 3, price: 0.50 },
+        { sticks: 7, price: 1.00 },
+        { sticks: 14, price: 1.80 },
+      ]
     },
     {
       id: 2,
       name: 'Trident Bubblegum',
-      description: 'The classic, sweet taste of bubblegum for a fun, fresh chew. Each pack contains 14 pieces of sugar-free gum.',
-      price: 1.25,
       image: 'https://i5.walmartimages.com/seo/Trident-Bubble-Gum-Sugar-Free-Gum-12-Packs-168-Pieces_a0186d9a-5e04-4533-87f5-23c510a76046.85f401f703e39064c581a63b063116d4.jpeg',
       aiHint: 'pink bubblegum',
+      description: 'The classic, sweet taste of bubblegum for a fun, fresh chew.',
+      options: [
+        { sticks: 1, price: 0.20 },
+        { sticks: 3, price: 0.50 },
+        { sticks: 7, price: 1.00 },
+        { sticks: 14, price: 1.80 },
+      ]
     },
     {
       id: 3,
       name: 'Trident Perfect Peppermint',
-      description: 'A cool, crisp peppermint flavor for an invigoratingly fresh breath. Each pack contains 14 pieces of sugar-free gum.',
-      price: 1.25,
       image: 'https://storage.googleapis.com/stedi-studio-prod/1721861294073-trident-peppermint.jpg',
       aiHint: 'peppermint leaf',
+      description: 'A cool, crisp peppermint flavor for an invigoratingly fresh breath.',
+      options: [
+        { sticks: 1, price: 0.20 },
+        { sticks: 3, price: 0.50 },
+        { sticks: 7, price: 1.00 },
+        { sticks: 14, price: 1.80 },
+      ]
     },
     {
       id: 4,
       name: 'Trident Cinnamon',
-      description: 'A bold, fiery burst of sweet and spicy cinnamon flavor. Each pack contains 14 pieces of sugar-free gum.',
-      price: 1.25,
       image: 'https://i5.walmartimages.com/seo/Trident-Cinnamon-Sugar-Free-Gum-with-Xylitol-14-Count_6dc69851-f4ab-45c1-8422-b5311b9fa75c.9bd9422a134370d9a263162381283832.jpeg',
       aiHint: 'cinnamon stick',
+      description: 'A bold, fiery burst of sweet and spicy cinnamon flavor.',
+       options: [
+        { sticks: 1, price: 0.20 },
+        { sticks: 3, price: 0.50 },
+        { sticks: 7, price: 1.00 },
+        { sticks: 14, price: 1.80 },
+      ]
     },
     {
       id: 5,
       name: 'Trident Watermelon Twist',
-      description: 'The juicy, refreshing flavor of a sweet slice of watermelon. Each pack contains 14 pieces of sugar-free gum.',
-      price: 1.25,
       image: 'https://i5.walmartimages.com/seo/Trident-Vibes-Watermelon-Twist-Sugar-Free-Gum-1-Bottle-40-Piece-Pack_3c279d03-34e8-469a-906b-4e12e75e54d8.530396489437151f1659f49377484d4b.jpeg',
       aiHint: 'watermelon fruit',
+      description: 'The juicy, refreshing flavor of a sweet slice of watermelon.',
+      options: [
+        { sticks: 1, price: 0.20 },
+        { sticks: 3, price: 0.50 },
+        { sticks: 7, price: 1.00 },
+        { sticks: 14, price: 1.80 },
+      ]
     },
     {
       id: 6,
       name: 'Trident Spearmint',
-      description: 'The classic, refreshing taste of spearmint that cools you down. Each pack contains 14 pieces of sugar-free gum.',
-      price: 1.25,
       image: 'https://i5.walmartimages.com/seo/Trident-Spearmint-Sugar-Free-Gum-12-Packs-168-Pieces_8f7b0b8f-5953-41a6-8e2b-f414578c4a17.e9151c89b78335552697d413364f9958.jpeg',
       aiHint: 'green spearmint',
+      description: 'The classic, refreshing taste of spearmint that cools you down.',
+      options: [
+        { sticks: 1, price: 0.20 },
+        { sticks: 3, price: 0.50 },
+        { sticks: 7, price: 1.00 },
+        { sticks: 14, price: 1.80 },
+      ]
     },
     {
       id: 7,
       name: 'Trident Mint Bliss',
-      description: 'A smooth, satisfying mint flavor for a blissful, fresh feeling. Each pack contains 14 pieces of sugar-free gum.',
-      price: 1.25,
       image: 'https://storage.googleapis.com/stedi-studio-prod/1721861304538-trident-mint-bliss.jpg',
       aiHint: 'mint spearmint',
+      description: 'A smooth, satisfying mint flavor for a blissful, fresh feeling.',
+      options: [
+        { sticks: 1, price: 0.20 },
+        { sticks: 3, price: 0.50 },
+        { sticks: 7, price: 1.00 },
+        { sticks: 14, price: 1.80 },
+      ]
     },
     {
       id: 8,
       name: 'Trident Tropical Twist',
-      description: 'A sweet splash of mango and pineapple flavor for a tropical getaway. Each pack contains 14 pieces of sugar-free gum.',
-      price: 1.25,
       image: 'https://i5.walmartimages.com/seo/Trident-Tropical-Twist-Sugar-Free-Gum-with-Xylitol-12-Packs-of-14-Pieces-168-Total-Pieces_b432e188-1596-4e45-b659-333d404d8051.10269f88ae236168e34a66a7751adca3.jpeg',
       aiHint: 'tropical fruit',
+      description: 'A sweet splash of mango and pineapple flavor for a tropical getaway.',
+      options: [
+        { sticks: 1, price: 0.20 },
+        { sticks: 3, price: 0.50 },
+        { sticks: 7, price: 1.00 },
+        { sticks: 14, price: 1.80 },
+      ]
     },
     {
       id: 9,
       name: 'Trident Original Flavor',
-      description: 'The timeless, original flavor that started it all. Each pack contains 14 pieces of sugar-free gum.',
-      price: 1.25,
       image: 'https://storage.googleapis.com/stedi-studio-prod/1721861313935-trident-original.jpg',
       aiHint: 'blue chewing',
+      description: 'The timeless, original flavor that started it all.',
+      options: [
+        { sticks: 1, price: 0.20 },
+        { sticks: 3, price: 0.50 },
+        { sticks: 7, price: 1.00 },
+        { sticks: 14, price: 1.80 },
+      ]
     }
   ];
 
@@ -88,6 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Cart Logic ---
+  // The cart now stores items with a unique ID combining flavorId and sticks count
+  // e.g., cart item: { id: "1-14", name: "Trident Pineapple Twist", sticks: 14, price: 1.80, quantity: 1, image: '...' }
   let cart = JSON.parse(localStorage.getItem('taggerzCart')) || [];
 
   const saveCart = () => {
@@ -107,15 +154,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const addToCart = (flavorId, buttonElement) => {
+  const addToCart = (flavorId, sticks, price, buttonElement) => {
     const flavor = flavors.find(f => f.id === flavorId);
     if (!flavor) return;
 
-    const existingItem = cart.find(item => item.id === flavorId);
+    const cartItemId = `${flavorId}-${sticks}`;
+    const existingItem = cart.find(item => item.id === cartItemId);
+    
     if (existingItem) {
       existingItem.quantity++;
     } else {
-      cart.push({ ...flavor, quantity: 1 });
+      cart.push({ 
+        id: cartItemId,
+        flavorId: flavor.id,
+        name: flavor.name,
+        sticks: sticks,
+        price: price,
+        quantity: 1,
+        image: flavor.image
+      });
     }
     saveCart();
     
@@ -124,28 +181,29 @@ document.addEventListener('DOMContentLoaded', () => {
         buttonElement.textContent = 'Added!';
         buttonElement.classList.add('added');
         setTimeout(() => {
-            buttonElement.textContent = 'Add to Cart';
+            buttonElement.innerHTML = `<i data-lucide="shopping-cart"></i> Add to Cart`;
             buttonElement.classList.remove('added');
+            lucide.createIcons();
         }, 1500);
     }
   };
   
-  const updateQuantity = (flavorId, newQuantity) => {
-    const item = cart.find(i => i.id === flavorId);
+  const updateQuantity = (cartItemId, newQuantity) => {
+    const item = cart.find(i => i.id === cartItemId);
     if (item) {
         if (newQuantity > 0) {
             item.quantity = newQuantity;
         } else {
             // If quantity is 0 or less, remove it
-            cart = cart.filter(i => i.id !== flavorId);
+            cart = cart.filter(i => i.id !== cartItemId);
         }
     }
     saveCart();
     renderCart();
   };
   
-  const removeFromCart = (flavorId) => {
-    cart = cart.filter(item => item.id !== flavorId);
+  const removeFromCart = (cartItemId) => {
+    cart = cart.filter(item => item.id !== cartItemId);
     saveCart();
     renderCart();
   };
@@ -159,15 +217,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const cardLink = document.createElement('a');
       cardLink.href = `product.html?id=${flavor.id}`;
       cardLink.className = 'card-link';
+      // Use the price of the first option for display on the grid
+      const displayPrice = flavor.options[0].price;
       cardLink.innerHTML = `
         <div class="card glass">
           <img src="${flavor.image}" alt="${flavor.name}" data-ai-hint="${flavor.aiHint}" />
           <div class="card-content">
             <h3>${flavor.name}</h3>
-            <p>${flavor.description.substring(0, 70)}...</p>
+            <p>${flavor.description}</p>
             <div class="price-view">
-                <span class="price-tag">$${flavor.price.toFixed(2)}</span>
-                <span class="view-details">View Details <i data-lucide="arrow-right"></i></span>
+                <span class="price-tag">From $${displayPrice.toFixed(2)}</span>
+                <span class="view-details">View Options <i data-lucide="arrow-right"></i></span>
             </div>
           </div>
         </div>
@@ -188,7 +248,16 @@ document.addEventListener('DOMContentLoaded', () => {
         productDetailContainer.innerHTML = '<p>Product not found.</p>';
         return;
     }
+    
+    let selectedOption = flavor.options[flavor.options.length-1]; // Default to largest pack
 
+    const updateDisplay = () => {
+        const priceDisplay = document.getElementById('price-display');
+        if (priceDisplay) {
+            priceDisplay.textContent = `$${selectedOption.price.toFixed(2)}`;
+        }
+    };
+    
     productDetailContainer.innerHTML = `
         <div class="product-image">
             <img src="${flavor.image}" alt="${flavor.name}" class="glass">
@@ -196,18 +265,43 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="product-info">
             <h2 class="headline">${flavor.name}</h2>
             <p class="product-description">${flavor.description}</p>
-            <div class="price-large">$${flavor.price.toFixed(2)}</div>
-            <button class="btn add-to-cart-btn" data-flavor-id="${flavor.id}">
+            
+            <div class="variant-selector">
+                <h4>Select Size:</h4>
+                <div class="variant-options">
+                    ${flavor.options.map((opt, index) => `
+                        <button class="btn-variant ${opt.sticks === selectedOption.sticks ? 'selected' : ''}" data-sticks="${opt.sticks}" data-price="${opt.price}">
+                            ${opt.sticks} stick${opt.sticks > 1 ? 's' : ''}
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+
+            <div class="price-large" id="price-display">$${selectedOption.price.toFixed(2)}</div>
+            <button class="btn add-to-cart-btn" id="add-to-cart-btn">
                 <i data-lucide="shopping-cart"></i> Add to Cart
             </button>
         </div>
     `;
     lucide.createIcons();
     
-    // Add event listener for the new button
-    const addToCartButton = productDetailContainer.querySelector('.add-to-cart-btn');
+    // Add event listeners
+    const addToCartButton = document.getElementById('add-to-cart-btn');
     addToCartButton.addEventListener('click', () => {
-        addToCart(flavor.id, addToCartButton);
+        addToCart(flavor.id, selectedOption.sticks, selectedOption.price, addToCartButton);
+    });
+    
+    const variantButtons = productDetailContainer.querySelectorAll('.btn-variant');
+    variantButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            variantButtons.forEach(btn => btn.classList.remove('selected'));
+            button.classList.add('selected');
+            selectedOption = {
+                sticks: parseInt(button.dataset.sticks),
+                price: parseFloat(button.dataset.price)
+            };
+            updateDisplay();
+        });
     });
   };
 
@@ -223,11 +317,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="index.html" class="btn" style="max-width: 200px; margin: 20px auto 0;">Shop Flavors</a>
             </div>
         `;
-        lucide.createIcons(); // Re-render icons for the empty cart message
+        lucide.createIcons();
         return;
     }
     
-    cartContainer.innerHTML = ''; // Clear previous content
+    cartContainer.innerHTML = '';
     let subtotal = 0;
     
     const itemsContainer = document.createElement('div');
@@ -243,7 +337,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="${item.image}" alt="${item.name}">
                 <div>
                     <h3>${item.name}</h3>
-                    <p class="price-small">$${item.price.toFixed(2)}</p>
+                    <p class="item-variant">${item.sticks} sticks</p>
+                    <p class="price-small">$${item.price.toFixed(2)} each</p>
                 </div>
             </div>
             <div class="cart-item-actions">
@@ -269,10 +364,9 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     cartContainer.appendChild(summaryElement);
 
-    // Add event listeners using event delegation on the container
     cartContainer.addEventListener('change', e => {
         if (e.target.classList.contains('quantity-input')) {
-            const id = parseInt(e.target.dataset.id, 10);
+            const id = e.target.dataset.id;
             const quantity = parseInt(e.target.value, 10);
             updateQuantity(id, quantity);
         }
@@ -281,19 +375,18 @@ document.addEventListener('DOMContentLoaded', () => {
     cartContainer.addEventListener('click', e => {
         const removeButton = e.target.closest('.btn-remove');
         if (removeButton) {
-            const id = parseInt(removeButton.dataset.id, 10);
+            const id = removeButton.dataset.id;
             removeFromCart(id);
         }
     });
 
-    lucide.createIcons(); // Render trash icons
+    lucide.createIcons();
   };
 
   // --- Auth Forms ---
   if (loginForm) {
       loginForm.addEventListener('submit', (e) => {
           e.preventDefault();
-          // In a real app, you'd validate credentials here
           alert('Logged in successfully! (Demo)');
           window.location.href = 'index.html';
       });
@@ -302,7 +395,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (registerForm) {
       registerForm.addEventListener('submit', (e) => {
           e.preventDefault();
-          // In a real app, you'd create the user here
           alert('Account created! Welcome. (Demo)');
           window.location.href = 'index.html';
       });

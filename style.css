@@ -5,7 +5,7 @@
     --foreground-dark: #1a202c; /* Very Dark Blue-Gray */
     --foreground-light: #4a5568; /* Medium Gray */
     --glass-bg: rgba(255, 255, 255, 0.6);
-    --border-color: rgba(255, 255, 255, 0.3);
+    --border-color: rgba(200, 200, 220, 0.4);
     --shadow-color: rgba(0, 0, 0, 0.1);
     --font-headline: 'Poppins', sans-serif;
     --font-body: 'PT Sans', sans-serif;
@@ -277,7 +277,7 @@ footer {
     grid-template-columns: 1fr;
     gap: 40px;
     margin-top: 40px;
-    align-items: center;
+    align-items: start;
 }
 @media (min-width: 768px) {
     #product-detail {
@@ -310,6 +310,41 @@ footer {
 .product-info .btn {
     max-width: 300px;
 }
+/* Variant Selector */
+.variant-selector {
+    margin-bottom: 24px;
+}
+.variant-selector h4 {
+    font-family: var(--font-headline);
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: var(--foreground-dark);
+}
+.variant-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.btn-variant {
+    background-color: var(--glass-bg);
+    border: 2px solid var(--border-color);
+    color: var(--foreground-dark);
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+.btn-variant:hover {
+    border-color: var(--primary);
+    background-color: rgba(128, 0, 255, 0.1);
+}
+.btn-variant.selected {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
 
 /* Cart Page */
 #cart-container.glass {
@@ -351,6 +386,12 @@ footer {
     align-items: center;
     gap: 16px;
     flex-grow: 1;
+}
+.item-variant {
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 0.9rem;
+    margin: 4px 0 0 0;
 }
 .price-small {
     color: var(--foreground-light);
